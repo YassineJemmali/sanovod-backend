@@ -17,7 +17,12 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:3000", "https://sanovod.onrender.com"],
+  })
+);
 dotenv.config();
 connectDb();
 
